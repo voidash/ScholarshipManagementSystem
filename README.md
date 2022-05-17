@@ -1,6 +1,6 @@
-# Scholarship Management System 
+<h1 style="text-align:center">Scholarship Management System</h1>
 
-<img src="assets/splash.png" width="500px" height="500px">
+<center><img src="assets/splash.png" width="600px"></center>
 
 ## Using the Web App 
 
@@ -28,7 +28,9 @@ python manage.py run server
 
 ## Video Guide 
 
-![](https://img.youtube.com/vi/bNu5_ovwhjc/0.jpg)
+Click the image below for video guide
+
+[![](https://img.youtube.com/vi/bNu5_ovwhjc/0.jpg)](https://www.youtube.com/watch?v=bNu5_ovwhjc)
 
 ## Screenshots
 
