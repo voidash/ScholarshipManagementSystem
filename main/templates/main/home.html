@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Welcome to Scholarship management System! <span class="icon-emo-happy"></span></h2>
+  <p class="lead">
+    If you already have an account, go ahead and <a href="{% url 'login' %}">log in</a>. If you want to apply for scholarship, start   
+    by creating a <a href="{% url 'student_signup' %}">student account</a>.
+  </p>
+  <hr>
+  <h3>What's this about?</h3>
+  <p>
+    This application allows you to apply for various scholarship. Staffs will review your application and if we like your application we will send you email notification.
+  </p>
+  <style>
+    .reason-flex {
+      display:flex;
+      justify-content:space-between ;
+      width:100%;
+    }
+    .reason-flex .item {
+      width:33%;
+      text-align: center;
+    }
+    .reason-flex .item img{
+      width:100px; 
+    }
+  </style>
+  <div class="scholarship">
+      <p class="center">Why Scholarship Management System?</p>
+      <div class="reason-flex">
+        <div class="item">
+          <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/344/external-recommendation-literature-flaticons-lineal-color-flat-icons.png"/>
+          <div>Get matched with scholarship you want</div>
+        </div>
+        <div class="item">
+          <img src="https://img.icons8.com/nolan/344/certificate.png"/>
+          <div>Browse through various scholarships</div>
+        </div>
+        <div class="item">
+          <img src="https://img.icons8.com/plasticine/344/money.png"/>
+          <div>Ease your loans</div>
+        </div>
+
+      </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Submitted Applications</li>
+    </ol>
+  </nav>
+  <h2 class="mb-3">Submitted Applications</h2>
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Application</th>
+          <th>Reviewed</th>
+          <th>Approved</th>
+          <th>View Application</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for application in Application %}
+          <tr>
+            <td class="align-middle"><a href="{% url 'staff:view_submission' application.id %}">{{ application.name }}</a></td>
+            <td class="align-middle">{{ application.reviewed }}</td>
+            <td class="align-middle">{{ application.approved }}</td>
+            <td class="align-middle"><a href="{% url 'staff:view_submission' application.id %}">View Submission</a></td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="5">There are no submitted applications yet</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

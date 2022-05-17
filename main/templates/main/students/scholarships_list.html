@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+     <a href="{% url 'students:applied_scholarship' %}"><h4>view your application status</h4></a>
+
+     <hr>
+  </div>
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Scholarship</th>
+          <th>Open Date</th>
+          <th>Close Date</th>
+          <th>Grant</th>
+          <th>Apply</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for scholarship in Scholarship %}
+          <tr>
+            <td><a href="{% url 'students:scholarship_description' scholarship.id %}">{{ scholarship.scholarship_type }}</a></td>
+            <td>{{ scholarship.application_open_date}} </td>
+            <td>{{ scholarship.application_close_date }}</td>
+            <td>${{ scholarship.money}}</td>
+            <td><a href="{% url 'students:apply_scholarship' scholarship.id %}">Apply</a></td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="3">No scholarships open yet </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

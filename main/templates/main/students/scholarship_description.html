@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ scholarship.scholarship_type }}</h1>
+
+<br/>
+<br/>
+<style>
+    .time {
+        font-size: 20px;
+        background: #3d3d;
+        padding: 20px;
+        border-radius: 20px;
+    }
+    .money {
+        background: #2d2d30;
+        color: white;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 20px;
+
+    }
+</style>
+<div>
+    <div class="time">
+        <p>Application Closing Date : {{ scholarship.application_open_date }}</p>
+        <p>Application Opening Date : {{ scholarship.application_close_date }} </p>
+    </div>
+    <div class = "money">
+        $ {{scholarship.money}}
+    </div>
+
+    <div>
+        {{scholarship.scholarship_field | safe}}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div>
+     <a href="#"><h4>Submitted Applications</h4></a>
+
+     <hr>
+  </div>
+  <div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Scholarship</th>
+          <th>Reviewed</th>
+          <th>Approved</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for application in Applications %}
+          <tr>
+            <td>{{ application.scholarship_type }}</td>
+            <td><input type="checkbox" value ="{{application.reviewed}}"/> </td>
+            <td><input type="checkbox" value ="{{application.approved}}"/> </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="3">No scholarships applied yet</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

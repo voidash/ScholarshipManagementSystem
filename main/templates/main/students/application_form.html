@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+  <h2 class="mb-3">Submit for {{ scholarship.scholarship_type }}</h2>
+  {% if errors %}
+    {{errors | safe }}  
+  {% endif %}
+  <form method="post" enctype="multipart/form-data" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Save changes</button>
+    <a href="{% url 'students:view_scholarships' %}" class="btn btn-outline-secondary">Nevermind</a>
+  </form>
+{% endblock %}
